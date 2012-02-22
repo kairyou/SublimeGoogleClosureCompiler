@@ -1,0 +1,13 @@
+{
+	"cmd": [
+		"java",
+		"-jar", "${packages}/Google Closure Compiler/bin/compiler.jar",
+		"--js", "$file", "--js_output_file", "NUL", "--compilation_level", "WHITESPACE_ONLY"
+	],
+    "windows": {
+        "cmd": ["${packages}/Google Closure Compiler/bin/compiler.cmd", "$file"],
+		"file_regex": "^(.*?):([0-9]*):",
+		"selector": "source.js"
+    },
+	"selector": "source.js"
+}

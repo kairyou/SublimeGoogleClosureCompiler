@@ -1,0 +1,8 @@
+
+Open a .js file, press F7 to build width Google Closure Compiler.
+
+Messages will show in the Console panel.
+When an error message appears, you can double-click it to jump the file and line.
+
+Google Closure Compiler:
+http://code.google.com/p/closure-compiler/downloads/list
