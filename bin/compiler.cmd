@@ -17,7 +17,7 @@ if "%JAVA_HOME%" == "" goto NoJavaHome
 if not exist "%JAVA_HOME%\bin\java.exe" goto NoJavaHome
 if not exist "%JAVA_HOME%\bin\native2ascii.exe" goto NoJavaHome
 
-:: filename.source.js -> filename.js£» filename.js -> filename.min.js
+:: filename.source.js -> filename.js  or filename.js -> filename.min.js
 set RESULT_FILE=%~n1.min%~x1
 dir /b "%~f1" | find ".source." > nul
 if %ERRORLEVEL% == 0 (
@@ -29,9 +29,6 @@ if %ERRORLEVEL% == 0 (
 :: compile.jar
     :: for utf-8
     "%JAVA_HOME%\bin\java.exe" -jar "%~dp0compiler.jar"  --charset UTF-8 --js "%~nx1" --js_output_file "%RESULT_FILE%"
-
-:: "×î¸ßÑ¹Ëõ
-:: "%JAVA_HOME%\bin\java.exe" -jar "%~dp0compiler.jar" --compilation_level ADVANCED_OPTIMIZATIONS --js "%~nx1.tmp" --js_output_file "%RESULT_FILE%"
 
 :: unicode to ascii
     copy /y "%RESULT_FILE%" "%RESULT_FILE%.tmp" > nul
@@ -46,7 +43,7 @@ if %ERRORLEVEL% == 0 (
     )
 ) else (
     echo NOTE: file %~nx1 syntax error
-	goto End
+    goto End
 )
 goto End
 
