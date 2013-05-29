@@ -4,7 +4,7 @@
 
 SETLOCAL ENABLEEXTENSIONS
 
-echo closure-compiler
+echo Closure Compiler
 
 :: select *.js
 if "%~x1" NEQ ".js" (
@@ -37,12 +37,11 @@ if %ERRORLEVEL% == 0 (
 
 :: print result
 if %ERRORLEVEL% == 0 (
-    echo Compress %~nx1 to %RESULT_FILE%
     for %%a in ("%RESULT_FILE%") do (
-        echo size from %~z1 bytes to %%~za bytes
+        echo Compress %~nx1 to %RESULT_FILE%, size from %~z1 bytes to %%~za bytes
     )
 ) else (
-    echo NOTE: file %~nx1 syntax error
+    :: echo NOTE: file %~nx1 syntax error
     goto End
 )
 goto End
