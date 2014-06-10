@@ -2,7 +2,8 @@
 	"cmd": [
 		"java",
 		"-jar", "${packages}/SublimeGoogleClosureCompiler/bin/compiler.jar",
-		"--js", "$file", "--js_output_file", "$file_base_name.min.js", "--compilation_level", "WHITESPACE_ONLY"
+		"--js", "$file", "--js_output_file", "$file_base_name.min.js",
+		//"--compilation_level", "WHITESPACE_ONLY"
 	],
     "file_regex": "^(.*?):([0-9]*):",
 	"selector": "source.js",
